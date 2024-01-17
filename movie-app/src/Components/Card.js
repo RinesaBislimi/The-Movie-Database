@@ -27,6 +27,7 @@ const Card = ({ info }) => {
                 <img src={`https://image.tmdb.org/t/p/w500${info.poster_path}`} alt={info.title} className="img-fluid" />
                 </div>
                 <div className="modal_body_p">
+                    
                 <p>{info.overview}</p>
                 </div>
             
