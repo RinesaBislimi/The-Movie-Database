@@ -14,6 +14,7 @@ const Card = ({ info }) => {
           </div>
         </div>
       </div>
+      
       {showModal && (
         <div className="modal-overlay" onClick={handleModalClose}>
           <div className="modal">
