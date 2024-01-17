@@ -19,6 +19,9 @@ const Main =()=>{
             setData(data.results);
         });
     },[url_set])
+
+   
+
     const getData=(movieType)=>{
         if(movieType=="Popular"){
             url=base_url+"/discover/movie?sort_by=popularity.desc"+API_key;
@@ -44,7 +47,18 @@ const Main =()=>{
     }
     return(
         <>
+        <div className="main">
             <div className="header">
+            <form>
+                    <div className="search-btn">
+                            <input type="text" placeholder="Enter Movie Name" 
+                            className="inputText" onChange={(e)=>{setSearch(e.target.value)}}
+                             value={search} onKeyPress={searchMovie}> 
+
+                            </input>
+                            <button><i class="fa-solid fa-film"></i></button>
+                    </div>
+                </form>
                 <nav>
                     <ul>
                         {
@@ -58,16 +72,7 @@ const Main =()=>{
                       
                     </ul>
                 </nav>
-                <form>
-                    <div className="search-btn">
-                            <input type="text" placeholder="Enter Movie Name" 
-                            className="inputText" onChange={(e)=>{setSearch(e.target.value)}}
-                             value={search} onKeyPress={searchMovie}> 
-
-                            </input>
-                            <button><i class="fa-solid fa-film"></i></button>
-                    </div>
-                </form>
+              
             </div>
             <div className="container">
                 {
@@ -77,6 +82,7 @@ const Main =()=>{
                         )
                     })
                 }
+            </div>
             </div>
         </>
     )

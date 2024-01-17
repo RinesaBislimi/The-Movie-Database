@@ -1,32 +1,49 @@
-*{
+* {
     padding: 0;
     margin: 0;
-}
-:root{
+  }
+  
+  :root {
     --primary-color: #023020;
     --secondary-color: #36454F;
-}
-body{
+  }
+  
+  body {
     background-color: var(--primary-color);
-}
-.header{
-    background-color: var(--secondary-color);
-    height: 100px;
+    display: flex;
+    height: 100%;
+  }
+  
+  .main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
     width: 100%;
+  }
+  
+  .header {
+    background-color: var(--secondary-color);
+    width: 20%; /* Set the width of the sidebar */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
-}
-
-nav ul{
+    padding: 20px; /* Add padding for styling */
+  }
+  
+  nav ul {
     display: flex;
-}
-nav ul li{
+    padding: 20px;
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  nav ul li {
+   
     list-style-type: none;
-    margin-right: 1rem;
-}
-nav ul li a{
+    margin-bottom: 1rem;
+  }
+  
+  nav ul li a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -34,17 +51,20 @@ nav ul li a{
     font-weight: bold;
     padding: 0.2rem 0.6rem;
     transition: all 0.5s;
-}
-nav ul li a:hover{
+  }
+  
+  nav ul li a:hover {
     background-color: var(--primary-color);
     opacity: 0.2px;
     border-radius: 20px;
-}
-.search-btn{
+  }
+  
+  .search-btn {
     display: flex;
-
-}
-.inputText{
+    margin-top: 1rem;
+  }
+  
+  .inputText {
     outline: none;
     border: 1px solid var(--primary-color);
     border-radius: 2rem 0 0 2rem;
@@ -53,59 +73,65 @@ nav ul li a:hover{
     color: white;
     background-color: var(--primary-color);
     box-shadow: inset 0 5px 10px var(--secondary-color);
-}
-.inputText::placeholder{
+  }
+  
+  .inputText::placeholder {
     color: white;
-}
-.search-btn button{
+  }
+  
+  .search-btn button {
     background-color: var(--secondary-color);
     box-shadow: inset 0 5px 10px var(--primary-color);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0 2rem 2rem 0;
-    color: white;
-    font-size: 1rem;
-    outline: none;
-    border: 1px solid var(--primary-color);
-}
-.container{
+  }
+   
+  .container {
+    padding: 70px;
     margin: auto;
     width: 80%;
     display: flex;
-    justify-content: center;
+    flex-direction: row; /* Set flex-direction to row */
+    justify-content: space-around; /* Adjust as needed */
+    align-items: flex-start; /* Align items to the start of the flex container */
     flex-wrap: wrap;
-}
-.movie{
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 5);
-    width: 250px;
-    background-color: var(--secondary-color);
+  }
+  
+  .movie {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    width: calc(33.33% - 2rem); /* Adjust the width and margin as needed */
     margin: 1rem;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
-}
-.movie .poster{
+  }
+  
+  .movie .poster {
     width: 100%;
     height: 250px;
-}
-.movie-details{
+  }
+  
+  .movie-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.movie-details .box{
+  }
+  
+  .movie-details .box {
     width: 100%;
     padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-.movie-details .title{
+  }
+  
+  .movie-details .title {
     width: 160px;
     text-align: center;
-}
-.rating{
+  }
+  
+  .rating {
     background-color: var(--primary-color);
     width: 45px;
     height: 45px;
@@ -115,10 +141,13 @@ nav ul li a:hover{
     justify-content: center;
     font-weight: bold;
     border: 1px solid var(--primary-color);
-    box-shadow: inset 0 5px 5px rgba(0, 0, 0, 5);
+    box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5);
     right: 5px;
     bottom: 5px;
-}
+  }
+  
+  /* ... Other styles ... */
+  
 @media (max-width:900px){
     .header{
         background-color: var(--secondary-color);
