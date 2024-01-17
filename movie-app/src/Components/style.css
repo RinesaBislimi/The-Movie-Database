@@ -148,18 +148,20 @@ css per kta tjt */
     left: 100;
     width: 60%;
     height: 50%;
-    background: transparent;
+  
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
   }
   .modal {
+    margin-top: auto;
     background: var(--secondary-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    
+    border: 1px solid cadetblue;
+    box-shadow: 10px 10px 10px black;
   }
   .modal-header {
     display: flex;
