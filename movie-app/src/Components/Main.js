@@ -84,6 +84,10 @@ const Main =()=>{
                 }
             </div>
             </div>
+            <div className="footer">
+          <p>&copy; 2024 Your Movie App</p>
+          <p>Contact us : <a href="#" >beetroot@gmail.com</a></p>
+        </div>
         </>
     )
 }

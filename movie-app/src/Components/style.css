@@ -145,6 +145,21 @@
     right: 5px;
     bottom: 5px;
   }
+
+
+  .footer{
+    background-color: #c2d4e1;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    
+  }
+  .footer a{
+    text-decoration: none;
+    color: #023020;
+  }
   
   /* ... Other styles ... */
   
