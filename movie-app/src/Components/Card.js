@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 const Card = ({ info }) => {
   const [showModal, setShowModal] = useState(false);
@@ -39,4 +40,6 @@ const Card = ({ info }) => {
     </>
   );
 };
+
 export default Card;
+
