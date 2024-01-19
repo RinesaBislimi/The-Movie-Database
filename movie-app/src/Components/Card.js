@@ -1,9 +1,14 @@
-
 import React, { useState } from "react";
-const Card = ({ info }) => {
+const Card = ({ info, selectedMovie, setSelectedMovie }) => {
   const [showModal, setShowModal] = useState(false);
-  const handleModalClose = () => setShowModal(false);
-  const handleModalShow = () => setShowModal(true);
+  const handleModalClose = () => {
+    setShowModal(false);
+    setSelectedMovie(null); // Reset the selected movie when the modal is closed
+  };
+  const handleModalShow = () => {
+    setShowModal(true);
+    setSelectedMovie(info.id); // Set the selected movie when the modal is opened
+  };
   return (
     <>
       <div className="movie" onClick={handleModalShow} style={{ cursor: "pointer" }}>
@@ -15,8 +20,7 @@ const Card = ({ info }) => {
           </div>
         </div>
       </div>
-      
-      {showModal && (
+      {showModal && selectedMovie === info.id && (
         <div className="modal-overlay" onClick={handleModalClose}>
           <div className="modal">
             <div className="modal-header">
@@ -24,14 +28,12 @@ const Card = ({ info }) => {
               <button className="titulli_x" onClick={handleModalClose}>&times;</button>
             </div>
             <div className="modal-body secondclass">
-                <div className="modal_body_img">
+              <div className="modal_body_img">
                 <img src={`https://image.tmdb.org/t/p/w500${info.poster_path}`} alt={info.title} className="img-fluid" />
-                </div>
-                <div className="modal_body_p">
-                    
+              </div>
+              <div className="modal_body_p">
                 <p>{info.overview}</p>
-                </div>
-            
+              </div>
               {/* Add other details you want to display in the modal */}
             </div>
           </div>
@@ -40,6 +42,4 @@ const Card = ({ info }) => {
     </>
   );
 };
-
 export default Card;
-
