@@ -1,19 +1,17 @@
-
-
 * {
   padding: 0;
   margin: 0;
 }
 
 :root {
-  --primary-color: #023020;
+  --primary-color: #084454;
   --secondary-color: #36454F;
 }
 
 body {
   background-color: var(--primary-color);
-  display: flex;
   height: 100%;
+  background-image: url('');
 }
 
 .main {
@@ -22,21 +20,29 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
+  background: linear-gradient(to bottom, transparent, #084454 ), url(./bg4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: start;
 }
 
 .header {
-  background-color: var(--secondary-color);
-  width: 20%; /* Set the width of the sidebar */
+  background-color: var(--primary-color);
+  width: 18%; /* Set the width of the sidebar */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px; /* Add padding for styling */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
   display: flex;
-  padding: 20px;
+  padding: 50px 20px;
   flex-direction: column; /* Stack items vertically */
+  justify-content: space-between;
+  height: 300px;
+  
 }
 
 nav ul li {
@@ -48,52 +54,72 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: white;
-  text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.2rem 0.6rem;
-  transition: all 0.5s;
+  position: relative;
 }
-
-nav ul li a:hover {
+nav ul li a:hover{
+  opacity: 0.5;
+  transition: ease-in-out 0.3s;
+}
+nav ul li a::before{
+  content: "";
+  position: absolute;
+  top:-10px;
+  left:50%;
+  height: 3px;
+  width:0;
+  transform: translateX(-50%);
   background-color: var(--primary-color);
-  opacity: 0.2px;
-  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
-
+nav ul li a:hover:before{
+width:100%;
+}
+nav ul li a:focus{
+background-color: var(--primary-color);
+opacity: 0.2px;
+border-radius: 20px;
+}
+nav ul li a:focus::before{
+width: 0%;
+}
 .search-btn {
   display: flex;
   margin-top: 1rem;
+  border-radius: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+ 
+  padding: 10px 0px;
 }
 
 .inputText {
+  background: transparent;
+  flex: 1;
+  border: none;
   outline: none;
-  border: 1px solid var(--primary-color);
-  border-radius: 2rem 0 0 2rem;
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
-  color: white;
-  background-color: var(--primary-color);
-  box-shadow: inset 0 5px 10px var(--secondary-color);
+  font-size: 15px;
+  color: #cac7ff;
+  padding: 5px 20px;
+  text-align: center;
 }
 
 .inputText::placeholder {
-  color: white;
+  color: #cac7ff;
 }
 
-.search-btn button {
-  background-color: var(--secondary-color);
-  box-shadow: inset 0 5px 10px var(--primary-color);
-}
  
 .container {
-  padding: 70px;
+  padding: 10px 70px;
   margin: auto;
   width: 80%;
+  height: 100%;
   display: flex;
-  flex-direction: row; /* Set flex-direction to row */
-  justify-content: space-around; /* Adjust as needed */
-  align-items: flex-start; /* Align items to the start of the flex container */
+/* Set flex-direction to row */
+  justify-content: center; /* Adjust as needed */
+  /* Align items to the start of the flex container */
   flex-wrap: wrap;
 }
 
@@ -112,7 +138,9 @@ nav ul li a:hover {
   width: 100%;
   height: 250px;
 }
-
+.poster:hover{
+  transform: scale(1.1) rotate(-1deg);
+}
 .movie-details {
   display: flex;
   flex-direction: column;
@@ -132,7 +160,9 @@ nav ul li a:hover {
   width: 160px;
   text-align: center;
 }
-
+.title{
+  color: #c2d4e1;
+}
 .rating {
   background-color: var(--primary-color);
   width: 45px;
@@ -143,9 +173,10 @@ nav ul li a:hover {
   justify-content: center;
   font-weight: bold;
   border: 1px solid var(--primary-color);
-  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 5px 5px rgba(0, 0, 0, 1);
   right: 5px;
   bottom: 5px;
+  color: #cac7ff;
 }
 
 
@@ -166,12 +197,27 @@ nav ul li a:hover {
 /* ... Other styles ... */
 
 @media (max-width:900px){
+.main{
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ 
+}
   .header{
       background-color: var(--secondary-color);
       height: 180px;
+     flex-direction: row;
+     width: 100%;
+     justify-content: center;
+     align-items: center;
+     
   }
+  
   nav ul{
+    display: flex;
       flex-direction: column;
+      height: auto;
   }
   nav ul li{
       padding-top: 10px;
@@ -180,6 +226,12 @@ nav ul li a:hover {
       width: 200px;
       margin-right: 100px;
   }
+  .footer{
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+  justify-content: space-evenly
+  }
 }
 .notfound{
   font-size: 40px;
@@ -187,9 +239,14 @@ nav ul li a:hover {
 }
 /* 
 css per kta tjt */
+/* 
+testt
+est */
+
+/* teste */
 
 .modal-overlay {
-  position: fixed;
+ position:fixed;
   top: 10;
   left: 100;
   width: 60%;
